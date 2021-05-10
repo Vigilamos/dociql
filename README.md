@@ -55,6 +55,7 @@ servers: # same format as for OpenAPI Specification
     ...
 
 info: # same format as for OpenAPI Specification
+    navTitle: Short title # if present, shown in the nav bar
     title: Your API Title
     description: Markdown enabled description of your api.    
     ...

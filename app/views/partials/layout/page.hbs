@@ -4,6 +4,7 @@
 --}}
 <div id="page" class="drawer-layout drawer-slide-right-large">
   <div id="sidebar">
+    <div id="sidebar-title" style="min-height: 32px;">
     <button class="close-button" aria-label="Close menu" type="button" data-drawer-close>
       <span aria-hidden="true">×</span>
     </button>
@@ -12,6 +13,12 @@
         <img src="images/{{logo}}" title="{{info.title}}" />
       </div>
     {{/if}}
+    {{#if info.navTitle}}
+      <div id="title">
+        {{info.navTitle}}
+      </div>
+    {{/if}}
+    </div>
     {{>layout/nav}}
   </div>
   {{!layout/topbar}}
