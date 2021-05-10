@@ -47,6 +47,7 @@ npm install -g dociql
 introspection: https://url-to-you-graphql-endpoint
 customCss: custom-css-definitions-file.css
 noTryItNow: true # if present, don't show the try it now links
+favicon: https://www.whatever.com/favicon16.png #favicon
 servers: # same format as for OpenAPI Specification
   - url: https://dev-server.com
     description: Dev
