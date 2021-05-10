@@ -22,6 +22,7 @@ module.exports = function(specPath, headers, introspectionUrl) {
     const swaggerSpec = {
         openapi: '3.0.0',
         info: spec.info,
+        customCss: spec.customCss,
         servers: spec.servers,
         host: parsedUrl.host,
         schemes: [ parsedUrl.protocol.slice(0, -1) ],

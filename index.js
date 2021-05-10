@@ -52,9 +52,9 @@ module.exports = function (options) {
     //
     //= Load the specification and init configuration
 
+    var specPath = path.resolve(opts.specFile)
+    var specData = require(path.resolve(opts.appDir + '/dociql/index'))(specPath, opts.header, opts.introspectionUrl)
     function loadData() {
-        var specPath = path.resolve(opts.specFile)
-        var specData = require(path.resolve(opts.appDir + '/dociql/index'))(specPath, opts.header, opts.introspectionUrl)
         return require(path.resolve(opts.appDir + '/lib/preprocessor'))(options, specData)
     }
 
@@ -116,7 +116,12 @@ module.exports = function (options) {
         fs.writeFileSync(opts.cacheDir + '/' + opts.targetFile, html)
     })
 
-    grunt.registerTask('stylesheets', ['sass:scss', 'concat:css', 'cssmin'])
+    const baseStylesheetTasks = ['sass:scss', 'concat:css']
+    const customStylesheetTasks = specData.customCss
+      ? ['sass:custom_scss', 'concat:custom_css']
+      : []
+    const stylesheetTasks = [...baseStylesheetTasks, ...customStylesheetTasks]
+    grunt.registerTask('stylesheets', [...stylesheetTasks, 'cssmin'])
     grunt.registerTask('javascripts', ['concat:js', 'uglify'])
     grunt.registerTask('templates', ['clean:html', 'compile-handlebars', 'predentation', 'prettify'])
     grunt.registerTask('foundation', ['sass:foundation_scss', 'concat:foundation_css']) // 'concat:foundation_js'

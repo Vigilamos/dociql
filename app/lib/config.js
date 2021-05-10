@@ -25,6 +25,11 @@ module.exports = function(grunt, options, spec) {
                   [path.resolve(options.cacheDir, 'stylesheets/foundation.css')]: path.resolve(options.appDir, 'stylesheets/foundation-includes.scss')
               }
           },
+          custom_scss: {
+              files: {
+                [path.resolve(options.cacheDir, 'stylesheets/custom.css')]: path.resolve(spec.customCss || '')
+              }
+          }
       },
 
       // Concentrate JS files into a single source
@@ -58,6 +63,12 @@ module.exports = function(grunt, options, spec) {
           foundation_css: {
               src: [options.cacheDir + '/stylesheets/foundation.css'],
               dest: options.targetDir + '/stylesheets/foundation.css',
+          },
+
+          // Concentrate compiled CSS files into the target directory
+          custom_css: {
+              src: [options.cacheDir + '/stylesheets/custom.css'],
+              dest: options.targetDir + '/stylesheets/custom.css',
           }
       },
 
