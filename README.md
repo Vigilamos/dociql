@@ -46,6 +46,7 @@ npm install -g dociql
 # To fetch schema from
 introspection: https://url-to-you-graphql-endpoint
 customCss: custom-css-definitions-file.css
+noTryItNow: true # if present, don't show the try it now links
 servers: # same format as for OpenAPI Specification
   - url: https://dev-server.com
     description: Dev

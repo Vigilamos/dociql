@@ -23,6 +23,7 @@ module.exports = function(specPath, headers, introspectionUrl) {
         openapi: '3.0.0',
         info: spec.info,
         customCss: spec.customCss,
+        noTryItNow: spec.noTryItNow,
         servers: spec.servers,
         host: parsedUrl.host,
         schemes: [ parsedUrl.protocol.slice(0, -1) ],

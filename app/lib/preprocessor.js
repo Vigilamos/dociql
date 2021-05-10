@@ -68,6 +68,7 @@ module.exports = function(options, specData) {
           })
         // Show body section, if either a body-parameter or a consumes-property is present.
         operation._show_requst_body_section = true
+        operation.noTryItNow = specData.noTryItNow
       })
     })
     // If there are multiple tags, we show the tag-based summary

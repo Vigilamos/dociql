@@ -71,7 +71,12 @@
           <h5>Variables</h5>
           {{>swagger/print-example _request_body}}          
         {{/if}}
-        {{getTryItNow _request_body}}
+        {{#unless noTryItNow}}
+          {{getTryItNow _request_body}}
+        {{/unless}}
+        {{#if noTryItNow}}
+          <div class="no-try-it-now" style="height: 19px;"></div>
+        {{/if}}
       </section>
     {{/if}}</div>
   </div>
