@@ -1,5 +1,5 @@
 {
-  "name": "dociql",
+  "name": "@vigilamos/dociql",
   "version": "1.1.5",
   "description": "Generate beautiful static API documentation from GraphQL Schema",
   "preferGlobal": true,
@@ -75,5 +75,10 @@
     "codecov": "^3.6.1",
     "mocha": "^8.3.2",
     "nyc": "^14.1.1"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }
