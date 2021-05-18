@@ -168,7 +168,9 @@ Traverse.prototype.reflow = function(){
    var $prev = this.$active;
    var $next = this.$links.eq(curIdx);
    this.$active.removeClass(this.options.activeClass);
+   this.$active.parent().removeClass(this.options.activeClass);
    this.$active = $next.addClass(this.options.activeClass);
+   this.$active.parent().addClass(this.options.activeClass);
 
    if(this.options.deepLinking){
      var hash = this.$active[0].getAttribute('href');

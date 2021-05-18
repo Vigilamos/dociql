@@ -1,6 +1,6 @@
 {
   "name": "dociql",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Generate beautiful static API documentation from GraphQL Schema",
   "preferGlobal": true,
   "bin": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node bin/dociql -l eevee.png config.yml",
+    "build.tierra": "node bin/dociql -l tierra-logo.png config-tierra.yml",
     "publish": "node bin/dociql -l eevee.png -t docs config.yml",
     "test": "nyc --lines 85 --reporter=lcovonly --reporter=text-summary mocha && node bin/dociql -l eevee.png config.yml",
     "develop": "dociql -d",

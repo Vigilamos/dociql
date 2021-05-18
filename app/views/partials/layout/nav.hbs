@@ -24,8 +24,16 @@
   {{#if showTagSummary}}
     <h5>Operations</h5>
     {{#each tags}}
+      {{#if operations.[0]}}
+      <section class="section-with-children">
+        <div class="title-with-caret">
+          <div class="caret"></div>
+          <a href="#tag-{{htmlId name}}">{{name}}</a>
+        </div>
+      {{else}}
       <section>
         <a href="#tag-{{htmlId name}}">{{name}}</a>
+      {{/if}}
         <ul>
           {{#each operations}}
             <li>

@@ -87,6 +87,7 @@ button:focus {
     overflow: hidden;
     -o-text-overflow: ellipsis;
     text-overflow: ellipsis;
+    flex-grow: 1;
 
     &.active {
       color: $primary-color;
@@ -105,9 +106,31 @@ button:focus {
     }
 
     &.expand {
+      .caret {
+        transform: rotate(45deg) !important;
+      }
+
       > ul {
         display: block;
       }
+    }
+  }
+
+  #nav {
+    .title-with-caret {
+      display: flex;
+      align-items: center;
+    }
+
+    .caret {
+      border: solid black;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 2px;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      content: '';
+      margin-bottom: 0.3em;
     }
   }
 
